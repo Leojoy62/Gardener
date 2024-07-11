@@ -1,6 +1,11 @@
 import { useNavigate } from "react-router-dom";
 
-const CategoryCard = ({ name, image }) => {
+type TCategoryCardProps = {
+  name: string;
+  image: string;
+};
+
+const CategoryCard = ({ name, image }: TCategoryCardProps) => {
   const navigate = useNavigate();
 
   const handleViewProducts = () => {

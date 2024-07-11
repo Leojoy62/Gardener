@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAddOrderMutation } from "../redux/api/api";
 import { useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const CheckOut = () => {
   const location = useLocation();
@@ -26,6 +27,13 @@ const CheckOut = () => {
     e.preventDefault();
 
     await addOrder(orderData);
+    toast.success("Order Submitted Successfully");
+    setOrderData({
+      name: "",
+      phone: "",
+      address: "",
+      payableTotal: totalCost,
+    });
   };
 
   return (

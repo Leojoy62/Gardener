@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import { TProduct, updateProductStock } from "../redux/features/productSlice";
 import { useAppDispatch } from "../redux/hooks";

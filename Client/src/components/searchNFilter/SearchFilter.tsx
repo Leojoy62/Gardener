@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useGetProductsQuery } from "../../redux/api/api";
 import {
   TProduct,
@@ -16,7 +16,7 @@ const SearchFilter = () => {
 
   const dispatch = useAppDispatch();
 
-  const { data: products, isError, isLoading } = useGetProductsQuery(undefined);
+  const { data: products } = useGetProductsQuery(undefined);
 
   useEffect(() => {
     if (products) {

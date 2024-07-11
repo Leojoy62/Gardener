@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { useAddProductMutation } from "../../redux/api/api";
 import toast from "react-hot-toast";
+type TAddProductModalProps = {
+  isOpen: boolean;
+  onClose: () => void;
+};
 
-const AddProductModal = ({ isOpen, onClose }) => {
+const AddProductModal = ({ isOpen, onClose }: TAddProductModalProps) => {
   const [addProduct] = useAddProductMutation();
   const [productData, setProductData] = useState({
     title: "",

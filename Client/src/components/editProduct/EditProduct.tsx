@@ -1,7 +1,15 @@
 import { useState } from "react";
 import { useUpdateProductMutation } from "../../redux/api/api";
 import toast from "react-hot-toast";
-const EditProduct = ({ isOpen, onClose, product }) => {
+import { TProduct } from "../../redux/features/productSlice";
+
+type TEditProductProps = {
+  isOpen: boolean;
+  onClose: () => void;
+  product: TProduct;
+};
+
+const EditProduct = ({ isOpen, onClose, product }: TEditProductProps) => {
   const [updateProduct] = useUpdateProductMutation();
   const [updatedProduct, setUpdatedProductData] = useState({
     title: product.title,

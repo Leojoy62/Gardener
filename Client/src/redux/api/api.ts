@@ -3,7 +3,7 @@ import { updateProducts } from "../features/productSlice";
 
 export const baseApi = createApi({
   reducerPath: "baseApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://server-henna-xi.vercel.app" }),
   tagTypes: ["Products"],
   endpoints: (builder) => ({
     getProducts: builder.query({
@@ -21,6 +21,7 @@ export const baseApi = createApi({
       providesTags: ["Products"],
       async onQueryStarted(arg, { dispatch, queryFulfilled }) {
         try {
+          console.log(arg);
           const { data } = await queryFulfilled;
 
           dispatch(updateProducts(data));

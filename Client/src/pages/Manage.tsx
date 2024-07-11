@@ -9,7 +9,7 @@ import EditProduct from "../components/editProduct/EditProduct";
 import toast from "react-hot-toast";
 
 const Manage = () => {
-  const { data: products, error, isLoading } = useGetProductsQuery(undefined);
+  const { data: products } = useGetProductsQuery(undefined);
   const [deleteProduct] = useDeleteProductMutation();
 
   const [isModalOpen, setIsModalOpen] = useState(false);
