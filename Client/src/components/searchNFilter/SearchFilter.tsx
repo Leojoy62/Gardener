@@ -112,6 +112,7 @@ const SearchFilter = () => {
                 </p>
                 <p className="text-yellow-500 text-center">{`Rating: ${product.rating}`}</p>
                 <p className="text-gray-500 text-center">{`Stock: ${product.stock}`}</p>
+                <p className="text-gray-500 text-center">{`Category: ${product.category}`}</p>
               </div>
 
               <button
